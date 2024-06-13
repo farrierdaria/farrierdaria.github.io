@@ -1,0 +1,187 @@
+*{
+    box-sizing:border-box;
+}
+
+@font-face{
+    font-family: 'Mikar';
+    src:local('Mikar');
+    src: url(../fonts/Mikar.ttf)
+}
+
+header{
+    text-align: center;
+    /* height: 150px;
+    background-color: #8FBC8F; */
+    /* position: absolute; */
+}
+
+html{
+    background-color: #D0F0C0;
+    margin: 0px;
+    margin-top: -16px;
+    padding: 0px;
+    font-family: 'Mikar';
+}
+
+body{
+    background-color: #D0F0C0;
+    margin: 0px;
+    padding: 0px; 
+}
+
+ul{
+    list-style-type: none;
+    text-align: center;
+    left: 0px;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+a:hover{
+    color: #374709;
+}
+
+.text{
+    display: inline;
+    padding-left: 250px;
+}
+
+li{
+    display: inline-block;
+    /* margin-right: 200px; */
+    /* margin-left: -40px; */
+   z-index: 5;
+   position: absolute;
+  
+}
+
+
+.logo {
+    /* display: block; */
+    width: 65px;
+    height: 60px;
+    top: 10px;
+    left: -100px;
+    /* z-index: 5;
+position: absolute; */
+}
+
+
+.mySlides { 
+    display: none;
+    max-width: 2000px;
+    height: 850px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    /* background: url(img/); */
+    background-size: 100%;
+}
+
+img {vertical-align: middle;}
+
+.slideshow-container {
+min-width: 800px;
+height: 850px;
+min-height: 700px;
+position: relative;
+margin: 0px;
+padding: 0px;
+background-size: 100%;
+background-color: #D0F0C0;
+z-index: 0;
+margin-top: -130px;
+}
+
+.slideshow-container.mySlides{
+    width: 100%;
+height: 100%;
+position: absolute;
+background-size: cover;
+background-position: 100% 100%;
+animation: move 30s infinite;
+opacity: 0;
+}
+
+.mySlides:nth-child(1){
+    background-image: url(img/1692695384_pushinka-top-p-ferma-kartinka-krasivo-4.jpg) ;
+}
+
+.slideshow-container.mySlides:nth-child(2){
+    background-image: url(img/490abac966ff84745c1592625d80a659.jpg) ;
+    animation-delay: 6s;
+}
+
+.slideshow-container.mySlides:nth-child(3){
+    background-image: url(img/1648054542_31-sportishka-com-p-krasivoe-fermerskoe-khozyaistvo-turizm-kra-41.jpg) ;
+    animation-delay: 12s;
+}
+
+
+@keyframes move{
+    10%{opacity: 1;}
+
+    20%{ opacity: 1; }
+
+    50%{transform: scale(1.2);}
+}
+
+/* Кнопки next & previous */
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+margin-top: -22px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+/* Измените положение "next button" */
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+/* Добавьте черный фоновый цвет с небольшой прозрачностью */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Точки/маркеры/указатели */
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #f7f1f1;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+background-color: #111111;
+}
+/* Выцветание анимации */
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}

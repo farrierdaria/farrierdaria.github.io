@@ -1,0 +1,638 @@
+@font-face{
+  font-family: 'Mikar';
+  src:local('Mikar');
+  src: url(../fonts/Mikar.ttf)
+}
+
+body {
+    font-family: 'Mikar';
+    font-weight: 400;
+    font-size: 18px;
+    background-color:#F2F2EF;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .container {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+  }
+  
+  
+  .btn {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    
+    transition: 0.2s opacity;
+  }
+  .btn:hover {
+    opacity: 0.8;
+  }
+  .btn:active {
+    opacity: 0.6;
+  }
+  
+  
+  
+  /* HEADER */
+  .header {
+    text-align: center;
+    height: 125px;
+    background-color: #759242;
+    display: grid;
+    /* grid-template-rows: max-content;
+    grid-template-columns: 1fr 1fr 100px;
+    grid-template-areas: "logo nav search"; */
+    grid-template: "logo nav search" max-content / 1.5fr 3.5fr 0.5fr;
+    align-items: center;
+    justify-items: start;
+    
+    padding: 15px 0;
+  
+    text-transform: uppercase;
+  
+    overflow: hidden;
+  }
+  
+  .logo {
+    line-height: 1;
+    grid-area: logo;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .header__nav {
+    grid-area: nav;
+    transform: translate(-15px);
+  }
+  
+  .header__nav ul {
+    display: flex;
+    gap: 10px;
+  }
+
+
+  .header__nav li {
+    list-style-type: none;
+    margin-right: 100px;
+  }
+  
+  .header__nav a {
+    padding: 15px;
+    transition: color 0.2s;
+  
+    position: relative;
+    display: inline-block;
+  }
+  
+  .header__nav a:hover {
+    color: #374709;
+  }
+  
+  .header__nav a:active {
+    color: #44a7a2;
+  }
+  
+  .header__nav a::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 100%;
+  
+    background-color:  #374709;;
+  
+    position: absolute;
+    left: 15px;
+    bottom: -200%;
+  
+    transition: bottom 0.5s, background-color 0.2s;
+  }
+  
+  .header__nav a:hover::after {
+    bottom: -80%;
+  }
+  
+  .header__nav a:active::after {
+    background-color: #44a7a2;
+  }
+  
+  
+  .search {
+    grid-area: search;
+  }
+  .search__icon {
+    transition: fill 0.2s;
+  }
+  .search__icon:hover {
+    fill: #54B9B4;
+  }
+  .search__icon:active {
+    fill: #44a7a2;
+  }
+  
+  
+
+ .Milk_prodacts{
+  font-size: 40px;
+  color: #212517;
+  margin: 90px;
+  margin-left: 300px;
+ }
+
+ .Meat_prodacts{
+  font-size: 40px;
+  color: #212517;
+  margin: 90px;
+  margin-left: 300px;
+ }
+
+  .card {
+    width: 225px;
+    min-height: 350px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+  }
+  
+  /* При наведении на карточку - меняем цвет тени */
+  .card:hover {
+    box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+  }
+  
+  .card__top {
+    flex: 0 0 220px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden; /* Скрываем, что выходит за пределы */
+  }
+  
+  /* Контейнер для картинки */
+  .card__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Встраиваем картинку в контейнер card__image */
+    transition: 0.2s;
+  }
+  
+  /* При наведении - увеличиваем картинку */
+  .card__image:hover > img {
+    transform: scale(1.1);
+  }
+  
+  /* Размещаем скидку на товар относительно изображения */
+  .card__label {
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #ff6633;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .card__bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+    position:relative; 
+    bottom:50px; 
+  }
+  
+  .card__prices {
+    display: flex;
+    margin-bottom: 10px;
+    flex: 0 0 50%; /* Размещаем цены равномерно в две колонки */
+    bottom: -10px;
+    position:relative;
+  }
+  
+  
+  .card__price--discount {
+    font-weight: 700;
+    font-size: 19px;
+    color: #414141;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    position:relative;
+    bottom: -30px;
+  }
+  
+  .card__price--discount::before {
+    content: "Со скидкой";
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+    position:relative;
+    bottom: 10px;
+  }
+  
+  .card__price--common {
+    font-weight: 400;
+    font-size: 17px;
+    color: #606060;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+    position:relative;
+    bottom: -30px;
+    
+  }
+  
+  .card__price--common::before {
+    content: "Обычная";
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+    bottom: 10px;
+    position:relative;
+   
+  }
+  
+  .card__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #414141;
+    position: relative;
+    bottom: -20px;
+  }
+  
+  .card__title:hover {
+    color:#759242;
+  }
+  
+  .card__add {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 17px;
+    color: #759242;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #759242;
+    border-radius: 4px;
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: 0.2s;
+    margin-top: auto; /* Прижимаем кнопку к низу карточки */
+    position: relative;
+    bottom: -10px;
+  }
+  
+  .card__add:hover {
+    border: 1px solid #759242;
+    background-color: #759242;
+    color: #fff;
+  }
+
+
+
+  .cards {
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1000px; /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center; /* Размещаем карточку по центру */
+    column-gap: 30px; /* Отступ между колонками */
+    row-gap: 40px; /* Отступ между рядами */
+    margin: 0 auto;
+  }
+
+
+
+
+  /* Стили для корзины */
+/* .cart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.cart-icon img {
+  width: 30px;
+  height: 30px;
+} */
+
+.cart-icon .cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.cart-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-total {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.order-button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.order-button:hover {
+  background-color: darkgreen;
+}
+
+
+/* Стили для карточек продуктов */
+/* .product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.product-card {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.product-card img {
+  width: 200px;
+  height: 200px;
+} */
+
+
+/* Стили для страницы товара */
+.product-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.product-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  font-size: small;
+}
+
+.product-info img {
+  width: 300px;
+  height: 300px;
+  margin-right: 20px;
+}
+
+.product-info button {
+  margin-top: 20px;
+}
+
+p{
+  margin: 5px;
+}
+
+
+
+.wrapper-down {
+  display: grid;
+  /* grid-template-columns: 4.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "footer sidebar"; */
+
+  grid-template: "footer sidebar" 0.75fr / 4.5fr 1.5fr;
+  margin-top: 220px;
+}
+
+/* FOOTER */
+.footer {
+  padding-top: 80px;
+
+  grid-area: footer;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr 1fr;
+  grid-template-rows: max-content 30px;
+  grid-template-areas:  ". socials form logo"
+                        ". . . copy";
+
+  grid-template:  ". socials form logo" max-content
+                  ". . . copy" 30px / 1fr 1fr 1.5fr 1fr;
+  align-items: end;
+  align-content: center;
+
+  background-color: #374709;
+
+  color: #fff;
+}
+
+.socials {
+  grid-area: socials;
+  display: flex;
+  gap: 10px;
+}
+
+.socials__link {
+  border: 2px solid #F2F2EF;
+  border-radius: 50%;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: opacity 0.2s;
+}
+.socials__link:hover {
+  opacity: 0.8;
+}
+.socials__link:active {
+  opacity: 0.6;
+}
+
+.socials__icon {
+  width: 20px;
+  height: 20px;
+  color: #F2F2EF;
+
+}
+
+.socials__icon :hover {
+  fill: #F2F2EF;
+}
+.socials__icon:active {
+  fill: #F2F2EF;
+}
+
+.form {
+  grid-area: form;
+  text-transform: uppercase;
+}
+
+.form__title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.form__row {
+  display: flex;
+}
+
+.form__input {
+  height: 40px;
+  width: 200px;
+  padding: 0 20px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+}
+
+.form__input:focus {
+  background-color: rgb(255, 255, 255);
+}
+
+.form__submit-btn {
+  background-color:#759242;
+  color: #fff;
+  height: 40px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  transition: background-color 0.2s;
+}
+.form__submit-btn:hover {
+  background-color: #759242;
+}
+.form__submit-btn:active {
+  background-color: #759242;
+}
+
+.logo-img {
+  fill: #6A6A6A;
+  justify-self: center;
+  transition: fill 0.2s;
+}
+.logo-img:hover {
+  fill: #759242;
+}
+
+.footer__logo {
+  grid-area: logo;
+}
+
+.copy {
+  grid-area: copy;
+  color: #6A6A6A;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  grid-area: sidebar;
+  background-color:#759242;
+}
+
+.btn--rounded {
+  border-radius: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.sidebar p + .btn {
+  margin-top: 20px;
+}
+
+.sidebar .title {
+  width: 100px;
+}
